@@ -18,7 +18,8 @@ export default createStore({
   mutations: {
     getCharacters(state) {
       state.characters = []
-      axios.get(`http://gateway.marvel.com/v1/public/characters?apikey=${public_key}`)
+      let url = `http://gateway.marvel.com/v1/public/characters?apikey=${public_key}`
+      axios.get(url)
         .then((res) => {
           console.log('res: ', res)
             res.data.data.results.forEach((item) => {
