@@ -1,4 +1,5 @@
-# marvel
+# Marvel Characters
+## by John Biddulph
 
 ## Project setup
 ```
