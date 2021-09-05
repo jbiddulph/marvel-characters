@@ -1,6 +1,7 @@
 <template>
     <div class="container">
         <h2>Marvel Characters</h2>
+        <VSPagination />
         <div class="character-list">
             <div v-for="character in characters" :key="character.id" class="character-card">
                 <router-link :to="{ name: 'Character', params: { id: character.id } }" >
@@ -15,10 +16,13 @@
 </template>
 
 <script>
+import VSPagination from '../components/VSPagination.vue'
 import { mapState } from 'vuex'
     export default {
         name: 'Characters',
-        
+        components: {
+            VSPagination
+        },
         mounted() {
             this.$store.dispatch('getCharacters')
         },
